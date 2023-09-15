@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HomeWork</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <style>
+      #registrasi {
+        display: none;
+      }
+      #listPendaftar {
+        display: none;
+      }
+      body {
+        background-color: #caedff;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container tabs text-center py-5 my-5">
+        <button
+          type="button"
+          class="tabLinks btn btn-danger"
+          id="buttonRegistrasi"
+        >
+          Registrasi
+        </button>
+        <button
+          type="button"
+          class="tabLinks btn btn-danger"
+          id="buttonListPendaftar"
+        >
+          List Pendaftar
+        </button>
+      </div>
+      <div class="awal container text-center py-5">
+        <h1>Selamat datang</h1>
+      </div>
+      <div class="container my-5">
+        <div id="registrasi">
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nama</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                minlength="10"
+                required
+              />
+              <div class="form-text">Nama Minimal 10 huruf</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Umur</label>
+              <input type="number" class="form-control" id="umur" min="25" />
+              <div class="form-text">Umur Minimal 25 Tahun</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Uang Sangu</label
+              >
+              <input
+                type="number"
+                class="form-control"
+                id="uangSangu"
+                min="100000"
+                max="1000000"
+              />
+              <div class="form-text">
+                Uang Sangu Minimal 100 Ribu Maksimal 1 juta
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" id="tombolClick">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container">
+        <div id="listPendaftar">
+          <table class="table" id="tabelData">
+            <thead>
+              <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Uang Sangu</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    <script src="main.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
