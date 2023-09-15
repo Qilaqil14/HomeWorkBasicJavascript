@@ -1,3 +1,4 @@
+
 const awal = document.getElementsByClassName("awal")[0];
 const registrasi = document.getElementById("registrasi");
 const listPendaftar = document.getElementById("listPendaftar");
@@ -9,16 +10,21 @@ document
     listPendaftar.style.display = "none";
     registrasi.style.display = "inline";
   });
+  
 document
   .getElementById("buttonListPendaftar")
-  .addEventListener("click", function (regis) {
-    regis.preventDefault();
+  .addEventListener("click", function (list) {
+    list.preventDefault();
     awal.style.display = "none";
     registrasi.style.display = "none";
     listPendaftar.style.display = "inline";
   });
 
 // function menampilkan barang
+let totalUmur = 0
+let totalUangSangu = 0
+let jumlahPendaftar = 0
+
 document
   .getElementById("tombolClick")
   .addEventListener("click", function (event) {
@@ -27,6 +33,7 @@ document
     const nama = document.getElementById("nama").value;
     const umur = document.getElementById("umur").value;
     const uangSangu = document.getElementById("uangSangu").value;
+
     if (
       nama.length >= 10 &&
       umur >= 25 &&
@@ -42,8 +49,20 @@ document
       tNama.innerHTML = nama;
       tUmur.innerHTML = umur;
       tUang.innerHTML = uangSangu;
+
+      totalUmur += umur
+      totalUangSangu += uangSangu
+      jumlahPendaftar++
+      const resume = document.getElementById('resume')
+
+      const rataRataUmur = totalUmur / jumlahPendaftar
+      const rataRataUangSagu = totalUangSangu / jumlahPendaftar
+
+      resume.textContent = `Rata-rata pendaftar memiliki uang sangu sebesar ${rataRataUangSagu.toFixed(2)} dengan rata-rata umur ${rataRataUmur.toFixed(2)} tahun`
+
       alert("Data Berhasil di Simpan");
     } else {
       alert("Data yang anda masukkan salah");
     }
   });
+
