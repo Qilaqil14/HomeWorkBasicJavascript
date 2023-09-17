@@ -2,6 +2,7 @@
 const awal = document.getElementsByClassName("awal")[0];
 const registrasi = document.getElementById("registrasi");
 const listPendaftar = document.getElementById("listPendaftar");
+// function untuk tombol Registrasi
 document
   .getElementById("buttonRegistrasi")
   .addEventListener("click", function (regis) {
@@ -10,7 +11,9 @@ document
     listPendaftar.style.display = "none";
     registrasi.style.display = "inline";
   });
+
   
+// function untuk tombol List Pendaftar
 document
   .getElementById("buttonListPendaftar")
   .addEventListener("click", function (list) {
@@ -20,7 +23,7 @@ document
     listPendaftar.style.display = "inline";
   });
 
-// function menampilkan barang
+// function tombol Submit
 let totalUmur = 0
 let totalUangSangu = 0
 let jumlahPendaftar = 0
@@ -40,8 +43,8 @@ document
       uangSangu >= 100000 &&
       uangSangu <= 1000000
     ) {
+// unutuk membuat Baris dan Kolom dalam Tabel
       const newRow = tabel.getElementsByTagName("tbody")[0].insertRow();
-
       const tNama = newRow.insertCell(0);
       const tUmur = newRow.insertCell(1);
       const tUang = newRow.insertCell(2);
@@ -50,6 +53,7 @@ document
       tUmur.innerHTML = umur;
       tUang.innerHTML = uangSangu;
 
+      // Menghitung Rata rata umur dan uang sangu
       totalUmur += umur
       totalUangSangu += uangSangu
       jumlahPendaftar++
